@@ -7,7 +7,8 @@ const initialState = {
   email: "",
   message: "",
 };
-export const Contact = (props) => {
+
+export const Contact = ({ data, language }) => {
   const [{ name, email, message }, setState] = useState(initialState);
 
   const handleChange = (e) => {
@@ -15,7 +16,6 @@ export const Contact = (props) => {
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
   const clearState = () => setState({ ...initialState });
-  
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ export const Contact = (props) => {
         }
       );
   };
+
   return (
     <div>
       <div id="contact">
@@ -42,10 +43,11 @@ export const Contact = (props) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>Get In Touch</h2>
+                <h2>{language === 'zh' ? '联系我们' : 'Get In Touch'}</h2>
                 <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
+                  {language === 'zh' 
+                    ? '请填写以下表单向我们发送电子邮件，我们会尽快回复您。'
+                    : 'Please fill out the form below to send us an email and we will get back to you as soon as possible.'}
                 </p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
@@ -57,7 +59,7 @@ export const Contact = (props) => {
                         id="name"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder={language === 'zh' ? '姓名' : 'Name'}
                         required
                         onChange={handleChange}
                       />
@@ -85,7 +87,7 @@ export const Contact = (props) => {
                     id="message"
                     className="form-control"
                     rows="4"
-                    placeholder="Message"
+                    placeholder={language === 'zh' ? '消息' : 'Message'}
                     required
                     onChange={handleChange}
                   ></textarea>
@@ -93,35 +95,35 @@ export const Contact = (props) => {
                 </div>
                 <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
-                  Send Message
+                  {language === 'zh' ? '发送消息' : 'Send Message'}
                 </button>
               </form>
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
+              <h3>{language === 'zh' ? '联系方式' : 'Contact Info'}</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> Address
+                  <i className="fa fa-map-marker"></i> {language === 'zh' ? '地址' : 'Address'}
                 </span>
-                {props.data ? props.data.address : "loading"}
+                {data ? data.address[language] : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Phone
+                  <i className="fa fa-phone"></i> {language === 'zh' ? '电话' : 'Phone'}
                 </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                {data ? data.phone[language] : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-envelope-o"></i> Email
+                  <i className="fa fa-envelope-o"></i> {language === 'zh' ? '邮箱' : 'Email'}
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                {data ? data.email : "loading"}
               </p>
             </div>
           </div>
@@ -130,17 +132,17 @@ export const Contact = (props) => {
               <div className="social">
                 <ul>
                   <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
+                    <a href={data ? data.facebook : "/"}>
                       <i className="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
+                    <a href={data ? data.twitter : "/"}>
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
+                    <a href={data ? data.youtube : "/"}>
                       <i className="fa fa-youtube"></i>
                     </a>
                   </li>

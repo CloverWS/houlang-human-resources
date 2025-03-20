@@ -1,21 +1,54 @@
 {
   "Header": {
-    "title": "智能導師配對平臺",
-    "paragraph": "我們的平臺基於AI技術，幫助平臺的老師和學生進行更好的配對，讓用戶能夠更輕鬆的找到那個合適的老師（學生），從而讓老師和學生通過使用我們的平臺獲得更好的體驗！"
+    "title": {
+      "zh": "智能导师配对平台",
+      "en": "Smart Teacher Platform"
+    },
+    "paragraph": {
+      "zh": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "en": "Our platform leverages AI technology to better match teachers and students, making it easier for users to find the right teacher (student), enabling both teachers and students to have a better experience through our platform!"
+    }
   },
   "About": {
-    "paragraph": "我們的平臺基於AI技術，幫助平臺的老師和學生進行更好的配對，讓用戶能夠更輕鬆的找到那個合適的老師（學生），從而讓老師和學生通過使用我們的平臺獲得更好的體驗！",
+    "paragraph": {
+      "zh": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "en": "Our platform leverages AI technology to better match teachers and students, making it easier for users to find the right teacher (student), enabling both teachers and students to have a better experience through our platform!"
+    },
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      {
+        "zh": "智能匹配算法",
+        "en": "Smart Matching Algorithm"
+      },
+      {
+        "zh": "实时互动功能",
+        "en": "Real-time Interaction"
+      },
+      {
+        "zh": "个性化学习体验",
+        "en": "Personalized Learning"
+      },
+      {
+        "zh": "灵活的课程安排",
+        "en": "Flexible Scheduling"
+      }
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      {
+        "zh": "专业的教师资源",
+        "en": "Professional Teachers"
+      },
+      {
+        "zh": "安全的支付系统",
+        "en": "Secure Payment"
+      },
+      {
+        "zh": "24/7客户支持",
+        "en": "24/7 Support"
+      },
+      {
+        "zh": "质量保证承诺",
+        "en": "Quality Guarantee"
+      }
     ]
   },
   "Gallery": [
@@ -152,12 +185,18 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
+    "address": {
+      "zh": "香港特别行政区",
+      "en": "Hong Kong SAR"
+    },
+    "phone": {
+      "zh": "+852 1234 5678",
+      "en": "+852 1234 5678"
+    },
+    "email": "contact@smartteacher.com",
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "youtube": "https://youtube.com"
   },
   "Features": [
     {

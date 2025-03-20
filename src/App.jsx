@@ -5,7 +5,7 @@ import { Header } from "./components/header";
 import { About } from "./components/about";
 // import { Services } from "./components/services";
 // import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
+// import { Testimonials } from "./components/testimonials";
 // import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
@@ -19,21 +19,27 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
+  const [language, setLanguage] = useState('zh');
+
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'zh' ? 'en' : 'zh');
+  };
+
   return (
     <div>
-      <Navigation />
-      <Header data={landingPageData.Header} />
+      <Navigation language={language} onLanguageChange={toggleLanguage} />
+      <Header data={landingPageData.Header} language={language} />
       {/* <Features data={landingPageData.Features} /> */}
-      <About data={landingPageData.About} />
+      <About data={landingPageData.About} language={language} />
       {/* <Services data={landingPageData.Services} />
       <Gallery data={landingPageData.Gallery} />
       <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} /> */}
-      <Contact data={landingPageData.Contact} />
+      <Contact data={landingPageData.Contact} language={language} />
     </div>
   );
 };

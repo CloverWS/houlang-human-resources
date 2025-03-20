@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Navigation = (props) => {
+export const Navigation = ({ language, onLanguageChange }) => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -33,8 +33,15 @@ export const Navigation = (props) => {
               </a>
             </li> */}
             <li>
-              <a href="#about" className="page-scroll">
-                About
+              <a 
+                href="#"
+                className="page-scroll"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onLanguageChange();
+                }}
+              >
+                {language === 'zh' ? 'English' : '中文'}
               </a>
             </li>
             {/* <li>
@@ -58,8 +65,13 @@ export const Navigation = (props) => {
               </a>
             </li> */}
             <li>
+              <a href="#about" className="page-scroll">
+                {language === 'zh' ? '关于我们' : 'About'}
+              </a>
+            </li>
+            <li>
               <a href="#contact" className="page-scroll">
-                Contact
+                {language === 'zh' ? '联系我们' : 'Contact'}
               </a>
             </li>
           </ul>
