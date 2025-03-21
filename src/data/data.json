@@ -1,52 +1,63 @@
 {
   "Header": {
     "title": {
-      "zh": "智能导师配对平台",
+      "zh-CN": "智能导师配对平台",
+      "zh-TW": "智能導師配對平台",
       "en": "Smart Teacher Platform"
     },
     "paragraph": {
-      "zh": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "zh-CN": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "zh-TW": "我們的平台基於AI技術，幫助平台的老師和學生進行更好的配對，讓用戶能夠更輕鬆的找到那個合適的老師（學生），從而讓老師和學生通過使用我們的平台獲得更好的體驗！",
       "en": "Our platform leverages AI technology to better match teachers and students, making it easier for users to find the right teacher (student), enabling both teachers and students to have a better experience through our platform!"
     }
   },
   "About": {
     "paragraph": {
-      "zh": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "zh-CN": "我们的平台基于AI技术，帮助平台的老师和学生进行更好的配对，让用户能够更轻松的找到那个合适的老师（学生），从而让老师和学生通过使用我们的平台获得更好的体验！",
+      "zh-TW": "我們的平台基於AI技術，幫助平台的老師和學生進行更好的配對，讓用戶能夠更輕鬆的找到那個合適的老師（學生），從而讓老師和學生通過使用我們的平台獲得更好的體驗！",
       "en": "Our platform leverages AI technology to better match teachers and students, making it easier for users to find the right teacher (student), enabling both teachers and students to have a better experience through our platform!"
     },
     "Why": [
       {
-        "zh": "智能匹配算法",
+        "zh-CN": "智能匹配算法",
+        "zh-TW": "智能匹配算法",
         "en": "Smart Matching Algorithm"
       },
       {
-        "zh": "实时互动功能",
+        "zh-CN": "实时互动功能",
+        "zh-TW": "實時互動功能",
         "en": "Real-time Interaction"
       },
       {
-        "zh": "个性化学习体验",
+        "zh-CN": "个性化学习体验",
+        "zh-TW": "個性化學習體驗",
         "en": "Personalized Learning"
       },
       {
-        "zh": "灵活的课程安排",
+        "zh-CN": "灵活的课程安排",
+        "zh-TW": "靈活的課程安排",
         "en": "Flexible Scheduling"
       }
     ],
     "Why2": [
       {
-        "zh": "专业的教师资源",
+        "zh-CN": "专业的教师资源",
+        "zh-TW": "專業的教師資源",
         "en": "Professional Teachers"
       },
       {
-        "zh": "安全的支付系统",
+        "zh-CN": "安全的支付系统",
+        "zh-TW": "安全的支付系統",
         "en": "Secure Payment"
       },
       {
-        "zh": "24/7客户支持",
+        "zh-CN": "24/7客户支持",
+        "zh-TW": "24/7客戶支持",
         "en": "24/7 Support"
       },
       {
-        "zh": "质量保证承诺",
+        "zh-CN": "质量保证承诺",
+        "zh-TW": "質量保證承諾",
         "en": "Quality Guarantee"
       }
     ]
@@ -185,18 +196,71 @@
     }
   ],
   "Contact": {
-    "address": {
-      "zh": "香港特别行政区",
-      "en": "Hong Kong SAR"
+    "title": {
+      "zh-CN": "联系我们",
+      "zh-TW": "聯繫我們",
+      "en": "Get In Touch"
     },
-    "phone": {
-      "zh": "+852 1234 5678",
-      "en": "+852 1234 5678"
+    "subtitle": {
+      "zh-CN": "请填写以下表单向我们发送电子邮件，我们会尽快回复您。",
+      "zh-TW": "請填寫以下表單向我們發送電子郵件，我們會盡快回覆您。",
+      "en": "Please fill out the form below to send us an email and we will get back to you as soon as possible."
     },
-    "email": "contact@smartteacher.com",
-    "facebook": "https://facebook.com",
-    "twitter": "https://twitter.com",
-    "youtube": "https://youtube.com"
+    "form": {
+      "name": {
+        "zh-CN": "姓名",
+        "zh-TW": "姓名",
+        "en": "Name"
+      },
+      "email": {
+        "zh-CN": "电子邮箱",
+        "zh-TW": "電子郵箱",
+        "en": "Email"
+      },
+      "message": {
+        "zh-CN": "消息",
+        "zh-TW": "訊息",
+        "en": "Message"
+      },
+      "send": {
+        "zh-CN": "发送消息",
+        "zh-TW": "發送訊息",
+        "en": "Send Message"
+      }
+    },
+    "info": {
+      "title": {
+        "zh-CN": "联系方式",
+        "zh-TW": "聯繫方式",
+        "en": "Contact Info"
+      },
+      "address": {
+        "zh-CN": "香港特别行政区",
+        "zh-TW": "香港特別行政區",
+        "en": "Hong Kong SAR"
+      },
+      "addressLabel": {
+        "zh-CN": "地址",
+        "zh-TW": "地址",
+        "en": "Address"
+      },
+      "phone": {
+        "zh-CN": "+852 1234 5678",
+        "zh-TW": "+852 1234 5678",
+        "en": "+852 1234 5678"
+      },
+      "phoneLabel": {
+        "zh-CN": "电话",
+        "zh-TW": "電話",
+        "en": "Phone"
+      },
+      "emailLabel": {
+        "zh-CN": "邮箱",
+        "zh-TW": "郵箱",
+        "en": "Email"
+      },
+      "email": "contact@smartteacher.com"
+    }
   },
   "Features": [
     {

@@ -43,12 +43,8 @@ export const Contact = ({ data, language }) => {
           <div className="col-md-8">
             <div className="row">
               <div className="section-title">
-                <h2>{language === 'zh' ? '联系我们' : 'Get In Touch'}</h2>
-                <p>
-                  {language === 'zh' 
-                    ? '请填写以下表单向我们发送电子邮件，我们会尽快回复您。'
-                    : 'Please fill out the form below to send us an email and we will get back to you as soon as possible.'}
-                </p>
+                <h2>{data ? data.title[language] : "loading"}</h2>
+                <p>{data ? data.subtitle[language] : "loading"}</p>
               </div>
               <form name="sentMessage" validate onSubmit={handleSubmit}>
                 <div className="row">
@@ -59,7 +55,7 @@ export const Contact = ({ data, language }) => {
                         id="name"
                         name="name"
                         className="form-control"
-                        placeholder={language === 'zh' ? '姓名' : 'Name'}
+                        placeholder={data ? data.form.name[language] : "Name"}
                         required
                         onChange={handleChange}
                       />
@@ -73,7 +69,7 @@ export const Contact = ({ data, language }) => {
                         id="email"
                         name="email"
                         className="form-control"
-                        placeholder="Email"
+                        placeholder={data ? data.form.email[language] : "Email"}
                         required
                         onChange={handleChange}
                       />
@@ -87,7 +83,7 @@ export const Contact = ({ data, language }) => {
                     id="message"
                     className="form-control"
                     rows="4"
-                    placeholder={language === 'zh' ? '消息' : 'Message'}
+                    placeholder={data ? data.form.message[language] : "Message"}
                     required
                     onChange={handleChange}
                   ></textarea>
@@ -95,35 +91,35 @@ export const Contact = ({ data, language }) => {
                 </div>
                 <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
-                  {language === 'zh' ? '发送消息' : 'Send Message'}
+                  {data ? data.form.send[language] : "Send Message"}
                 </button>
               </form>
             </div>
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>{language === 'zh' ? '联系方式' : 'Contact Info'}</h3>
+              <h3>{data ? data.info.title[language] : "Contact Info"}</h3>
               <p>
                 <span>
-                  <i className="fa fa-map-marker"></i> {language === 'zh' ? '地址' : 'Address'}
+                  <i className="fa fa-map-marker"></i> {data ? data.info.addressLabel[language] : "Address"}
                 </span>
-                {data ? data.address[language] : "loading"}
+                {data ? data.info.address[language] : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> {language === 'zh' ? '电话' : 'Phone'}
+                  <i className="fa fa-phone"></i> {data ? data.info.phoneLabel[language] : "Phone"}
                 </span>{" "}
-                {data ? data.phone[language] : "loading"}
+                {data ? data.info.phone[language] : "loading"}
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-envelope-o"></i> {language === 'zh' ? '邮箱' : 'Email'}
+                  <i className="fa fa-envelope-o"></i> {data ? data.info.emailLabel[language] : "Email"}
                 </span>{" "}
-                {data ? data.email : "loading"}
+                {data ? data.info.email : "loading"}
               </p>
             </div>
           </div>
@@ -131,6 +127,7 @@ export const Contact = ({ data, language }) => {
             <div className="row">
               <div className="social">
                 <ul>
+                  {/* 社交媒体图标暂时隐藏，等未来开通社交媒体账号后再显示
                   <li>
                     <a href={data ? data.facebook : "/"}>
                       <i className="fa fa-facebook"></i>
@@ -146,6 +143,7 @@ export const Contact = ({ data, language }) => {
                       <i className="fa fa-youtube"></i>
                     </a>
                   </li>
+                  */}
                 </ul>
               </div>
             </div>
@@ -155,10 +153,7 @@ export const Contact = ({ data, language }) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
+            © 2025 [Smart Teacher Platform].
           </p>
         </div>
       </div>

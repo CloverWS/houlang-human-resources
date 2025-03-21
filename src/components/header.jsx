@@ -1,6 +1,22 @@
 import React from "react";
 
-export const Header = ({ data, language }) => {
+export const Header = ({ data, language, onChatClick }) => {
+  const getButtonText = (key) => {
+    const texts = {
+      learnMore: {
+        'zh-CN': '了解更多',
+        'zh-TW': '瞭解更多',
+        'en': 'Learn More'
+      },
+      whatsapp: {
+        'zh-CN': 'WhatsApp咨询',
+        'zh-TW': 'WhatsApp諮詢',
+        'en': 'WhatsApp Consultation'
+      }
+    };
+    return texts[key][language];
+  };
+
   return (
     <header id="header">
       <div className="intro">
@@ -12,19 +28,18 @@ export const Header = ({ data, language }) => {
                   {data ? data.title[language] : "Loading"}
                   <span></span>
                 </h1>
-                <p>{data ? data.paragraph[language] : "Loading"}</p>
                 <a
-                  href="#features"
+                  href="#about"
                   className="btn btn-custom btn-lg page-scroll"
                 >
-                  {language === 'zh' ? '了解更多' : 'Learn More'}
+                  {getButtonText('learnMore')}
                 </a>{" "}
-                <a
-                  href="https://mediafiles.botpress.cloud/c514e207-0e70-4bd3-afd3-44404d89c055/webchat/bot.html"
-                  className="btn btn-custom btn-lg page-scroll"
+                <button
+                  onClick={onChatClick}
+                  className="btn btn-custom btn-lg"
                 >
-                  {language === 'zh' ? 'WhatsApp咨询' : 'WhatsApp Consultation'}
-                </a>{" "}
+                  {getButtonText('whatsapp')}
+                </button>{" "}
               </div>
             </div>
           </div>

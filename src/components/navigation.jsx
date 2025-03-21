@@ -1,6 +1,23 @@
 import React from "react";
 
 export const Navigation = ({ language, onLanguageChange }) => {
+  // 获取导航文本
+  const getNavText = (key) => {
+    const texts = {
+      about: {
+        'zh-CN': '关于我们',
+        'zh-TW': '關於我們',
+        'en': 'About'
+      },
+      contact: {
+        'zh-CN': '联系我们',
+        'zh-TW': '聯繫我們',
+        'en': 'Contact'
+      }
+    };
+    return texts[key][language];
+  };
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -27,51 +44,61 @@ export const Navigation = ({ language, onLanguageChange }) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            {/* <li>
-              <a href="#features" className="page-scroll">
-                Features
-              </a>
-            </li> */}
-            <li>
+            <li className="dropdown">
               <a 
                 href="#"
-                className="page-scroll"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onLanguageChange();
-                }}
+                className="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                {language === 'zh' ? 'English' : '中文'}
+                <i className="fa fa-globe"></i> {language} <span className="caret"></span>
               </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onLanguageChange('zh-CN');
+                    }}
+                  >
+                    简体中文
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onLanguageChange('zh-TW');
+                    }}
+                  >
+                    繁體中文
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onLanguageChange('en');
+                    }}
+                  >
+                    English
+                  </a>
+                </li>
+              </ul>
             </li>
-            {/* <li>
-              <a href="#services" className="page-scroll">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li> */}
             <li>
               <a href="#about" className="page-scroll">
-                {language === 'zh' ? '关于我们' : 'About'}
+                {getNavText('about')}
               </a>
             </li>
             <li>
               <a href="#contact" className="page-scroll">
-                {language === 'zh' ? '联系我们' : 'Contact'}
+                {getNavText('contact')}
               </a>
             </li>
           </ul>
