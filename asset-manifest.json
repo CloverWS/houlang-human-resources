@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/houlang-human-resources/static/css/main.9af4a1bb.css",
-    "main.js": "/houlang-human-resources/static/js/main.a46bfd6b.js",
+    "main.css": "/houlang-human-resources/static/css/main.b4f3348f.css",
+    "main.js": "/houlang-human-resources/static/js/main.71f7dbff.js",
     "index.html": "/houlang-human-resources/index.html",
-    "main.9af4a1bb.css.map": "/houlang-human-resources/static/css/main.9af4a1bb.css.map",
-    "main.a46bfd6b.js.map": "/houlang-human-resources/static/js/main.a46bfd6b.js.map"
+    "main.b4f3348f.css.map": "/houlang-human-resources/static/css/main.b4f3348f.css.map",
+    "main.71f7dbff.js.map": "/houlang-human-resources/static/js/main.71f7dbff.js.map"
   },
   "entrypoints": [
-    "static/css/main.9af4a1bb.css",
-    "static/js/main.a46bfd6b.js"
+    "static/css/main.b4f3348f.css",
+    "static/js/main.71f7dbff.js"
   ]
 }
