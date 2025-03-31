@@ -1,6 +1,6 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import React from "react";
+import Popup from "./Popup";
 
 const initialState = {
   name: "",
@@ -10,31 +10,70 @@ const initialState = {
 
 export const Contact = ({ data, language }) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [errors, setErrors] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    }
   };
-  const clearState = () => setState({ ...initialState });
+
+  const clearState = () => {
+    setState({ ...initialState });
+    setErrors({});
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!name.trim()) {
+      newErrors.name = {
+        'zh-CN': '请输入姓名',
+        'zh-TW': '請輸入姓名',
+        'en': 'Please enter your name'
+      }[language];
+    }
+    if (!email.trim()) {
+      newErrors.email = {
+        'zh-CN': '请输入电子邮箱',
+        'zh-TW': '請輸入電子郵箱',
+        'en': 'Please enter your email'
+      }[language];
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = {
+        'zh-CN': '请输入有效的电子邮箱',
+        'zh-TW': '請輸入有效的電子郵箱',
+        'en': 'Please enter a valid email'
+      }[language];
+    }
+    if (!message.trim()) {
+      newErrors.message = {
+        'zh-CN': '请输入消息内容',
+        'zh-TW': '請輸入訊息內容',
+        'en': 'Please enter your message'
+      }[language];
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, message);
+    if (!validateForm()) return;
     
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    // Simply show success popup and clear form
+    clearState();
+    setShowPopup(true);
   };
+
+  const successMessage = {
+    'zh-CN': '消息发送成功！我们会尽快回复您。',
+    'zh-TW': '訊息發送成功！我們會盡快回覆您。',
+    'en': 'Message sent successfully! We will get back to you soon.'
+  }[language];
 
   return (
     <div>
@@ -46,7 +85,7 @@ export const Contact = ({ data, language }) => {
                 <h2>{data ? data.title[language] : "loading"}</h2>
                 <p>{data ? data.subtitle[language] : "loading"}</p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form name="sentMessage" noValidate onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -54,12 +93,12 @@ export const Contact = ({ data, language }) => {
                         type="text"
                         id="name"
                         name="name"
-                        className="form-control"
+                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                         placeholder={data ? data.form.name[language] : "Name"}
-                        required
+                        value={name}
                         onChange={handleChange}
                       />
-                      <p className="help-block text-danger"></p>
+                      {errors.name && <div className="help-block text-danger">{errors.name}</div>}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -68,12 +107,12 @@ export const Contact = ({ data, language }) => {
                         type="email"
                         id="email"
                         name="email"
-                        className="form-control"
+                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                         placeholder={data ? data.form.email[language] : "Email"}
-                        required
+                        value={email}
                         onChange={handleChange}
                       />
-                      <p className="help-block text-danger"></p>
+                      {errors.email && <div className="help-block text-danger">{errors.email}</div>}
                     </div>
                   </div>
                 </div>
@@ -81,15 +120,14 @@ export const Contact = ({ data, language }) => {
                   <textarea
                     name="message"
                     id="message"
-                    className="form-control"
+                    className={`form-control ${errors.message ? 'is-invalid' : ''}`}
                     rows="4"
                     placeholder={data ? data.form.message[language] : "Message"}
-                    required
+                    value={message}
                     onChange={handleChange}
                   ></textarea>
-                  <p className="help-block text-danger"></p>
+                  {errors.message && <div className="help-block text-danger">{errors.message}</div>}
                 </div>
-                <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
                   {data ? data.form.send[language] : "Send Message"}
                 </button>
@@ -150,6 +188,13 @@ export const Contact = ({ data, language }) => {
           </div>
         </div>
       </div>
+      {showPopup && (
+        <Popup
+          message={successMessage}
+          onClose={() => setShowPopup(false)}
+          language={language}
+        />
+      )}
       <div id="footer">
         <div className="container text-center">
           <p>
