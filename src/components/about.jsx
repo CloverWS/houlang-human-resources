@@ -23,7 +23,7 @@ export const About = ({ data, language }) => {
         <div className="row">
           <div className="col-xs-12 col-md-6">
             {" "}
-            <img src="img/about-2.jpg" className="img-responsive" alt="" />{" "}
+            <img src={`${process.env.PUBLIC_URL}/img/about-2.jpg`} className="img-responsive" alt="About Us" />{" "}
           </div>
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
