@@ -1,4 +1,5 @@
 import React from "react";
+import backgroundImage from '../img/teacher-platform-bg2.jpg';
 
 export const Header = ({ data, language, onChatClick }) => {
   const getButtonText = (key) => {
@@ -19,7 +20,7 @@ export const Header = ({ data, language, onChatClick }) => {
 
   return (
     <header id="header">
-      <div className="intro">
+      <div className="intro" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className="overlay">
           <div className="container">
             <div className="row">

@@ -14,6 +14,22 @@
   transition: all 0.3s ease;
 }
 
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .chat-window {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+
+  .chat-window.minimized {
+    height: 50px;
+    bottom: 0;
+  }
+}
+
 .chat-window.minimized {
   height: 50px;
   overflow: hidden;
@@ -57,6 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #f8f9fa;
 }
 
 .message {
@@ -64,6 +81,14 @@
   padding: 10px 15px;
   border-radius: 15px;
   margin: 5px 0;
+  word-break: break-word;
+}
+
+/* Mobile styles for messages */
+@media screen and (max-width: 768px) {
+  .message {
+    max-width: 90%;
+  }
 }
 
 .message.user {
@@ -82,6 +107,7 @@
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .option-button {
@@ -92,6 +118,7 @@
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .option-button:hover {
@@ -104,6 +131,14 @@
   border-top: 1px solid #eee;
   display: flex;
   gap: 10px;
+  background-color: white;
+}
+
+/* Mobile styles for input container */
+@media screen and (max-width: 768px) {
+  .chat-input-container {
+    padding: 10px;
+  }
 }
 
 .chat-input {
@@ -112,6 +147,7 @@
   border: 1px solid #ddd;
   border-radius: 20px;
   outline: none;
+  font-size: 14px;
 }
 
 .chat-input:focus {
@@ -126,11 +162,15 @@
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
-.chat-input-container button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+/* Mobile styles for send button */
+@media screen and (max-width: 768px) {
+  .chat-input-container button {
+    padding: 10px 15px;
+  }
 }
 
 .chat-icon-button {

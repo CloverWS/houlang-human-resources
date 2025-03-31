@@ -1,3 +1,242 @@
+/* General Styles */
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+h2 {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 32px;
+  color: #333;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Mobile styles for headings */
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+/* Header Section */
+.intro {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background-color: #e5e5e5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.intro .overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.intro h1 {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile styles for intro section */
+@media screen and (max-width: 768px) {
+  .intro h1 {
+    font-size: 36px;
+    padding: 0 15px;
+  }
+}
+
+/* Navigation */
+#menu {
+  padding: 15px;
+  transition: all 0.8s;
+}
+
+#menu.navbar-default {
+  background-color: #fff;
+  border-color: rgba(231, 231, 231, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+#menu a.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Mobile styles for navigation */
+@media screen and (max-width: 768px) {
+  #menu {
+    padding: 10px;
+  }
+  
+  #menu a.navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-toggle {
+    margin-right: 0;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 100px 0;
+}
+
+/* Mobile styles for about section */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 60px 0;
+  }
+
+  #about .about-text {
+    padding: 20px;
+  }
+}
+
+/* Contact Section */
+#contact {
+  padding: 100px 0 60px 0;
+  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Mobile styles for contact section */
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 60px 0 40px 0;
+  }
+
+  #contact .contact-info {
+    margin-top: 40px;
+  }
+
+  .contact-item {
+    margin: 20px 0;
+  }
+}
+
+/* Form Styles */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* Mobile styles for forms */
+@media screen and (max-width: 768px) {
+  .form-control {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Button Styles */
+.btn-custom {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #5ca9fb;
+  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
+  padding: 14px 34px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.5s linear;
+  border: 0;
+}
+
+/* Mobile styles for buttons */
+@media screen and (max-width: 768px) {
+  .btn-custom {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Container Spacing */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Mobile styles for containers */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .col-xs-12,
+  .col-sm-6,
+  .col-md-3,
+  .col-md-6,
+  .col-md-8,
+  .col-md-offset-2 {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+/* Language Selector */
+.dropdown-menu {
+  min-width: 120px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile styles for language selector */
+@media screen and (max-width: 768px) {
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+  }
+}
+
 @media screen and (max-width: 400px) {
   #features {
     padding: 20px;
@@ -16,3 +255,4 @@
     width: 110%;
   }
 }
+
