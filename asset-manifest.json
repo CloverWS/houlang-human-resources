@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/houlang-human-resources/static/css/main.b4f3348f.css",
-    "main.js": "/houlang-human-resources/static/js/main.71f7dbff.js",
+    "main.css": "/houlang-human-resources/static/css/main.1a53b81d.css",
+    "main.js": "/houlang-human-resources/static/js/main.b4fcd596.js",
+    "static/media/teacher-platform-bg2.jpg": "/houlang-human-resources/static/media/teacher-platform-bg2.72106d2a5edd2351e75c.jpg",
     "index.html": "/houlang-human-resources/index.html",
-    "main.b4f3348f.css.map": "/houlang-human-resources/static/css/main.b4f3348f.css.map",
-    "main.71f7dbff.js.map": "/houlang-human-resources/static/js/main.71f7dbff.js.map"
+    "main.1a53b81d.css.map": "/houlang-human-resources/static/css/main.1a53b81d.css.map",
+    "main.b4fcd596.js.map": "/houlang-human-resources/static/js/main.b4fcd596.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4f3348f.css",
-    "static/js/main.71f7dbff.js"
+    "static/css/main.1a53b81d.css",
+    "static/js/main.b4fcd596.js"
   ]
 }
