@@ -43,7 +43,7 @@ const HomePage = ({ landingPageData, language, onLanguageChange, onChatClick }) 
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
-  const [language, setLanguage] = useState('zh-CN'); // 默认简体中文
+  const [language, setLanguage] = useState('en'); // Default to English
   const [isChatVisible, setIsChatVisible] = useState(false);
 
   useEffect(() => {
