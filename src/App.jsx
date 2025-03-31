@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 // import { Features } from "./components/features";
@@ -59,7 +59,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route 
           exact
