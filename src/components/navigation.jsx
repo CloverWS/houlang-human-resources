@@ -1,4 +1,5 @@
 import React from "react";
+import './navigation.css';
 
 export const Navigation = ({ language, onLanguageChange }) => {
   // 获取导航文本

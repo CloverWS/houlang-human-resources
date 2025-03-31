@@ -199,9 +199,18 @@ h3 {
 
 /* Mobile styles for containers */
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .container {
-    padding-right: 10px;
-    padding-left: 10px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-x: hidden;
   }
 
   .row {
@@ -217,6 +226,55 @@ h3 {
   .col-md-offset-2 {
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  /* Navigation styles */
+  .navbar {
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .navbar-toggle {
+    margin-right: 15px;
+  }
+
+  .navbar-default .navbar-nav {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar-default .navbar-nav > li {
+    width: auto;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    padding: 10px 15px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Ensure the navigation container doesn't overflow */
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    overflow-x: hidden;
+  }
+
+  /* Adjust the navigation toggle button position */
+  .navbar-header {
+    float: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
   }
 }
 
